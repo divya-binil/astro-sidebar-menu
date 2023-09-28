@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import SidebarComponent from "astro-sidebar-menu/astro";
+import generateMenuData from '../../utility';
+const menuData = generateMenuData('src/content');
+export const servicesCollection = "services" as const; 
+export const servicesEntries = await getCollection<typeof servicesCollection>(servicesCollection);
+
+export async function getStaticPaths() {
+    return servicesEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+<Layout title="Package" >
+	<div style="display: flex;">
+        <aside>
+        	<!-- <h2>Sidebar Menu</h2> -->
+			<SidebarComponent  menuData={menuData} />
+			<!-- <SidebarComponent customLiClass="sidebar-menu-li" customUlClass="sidebar-menu-ul" menuData={menuData} /> -->          
+        </aside>
+        <main>
+            <!-- <h1 class="text-2xl font-semibold">Page Title</h1> -->
+			<Content/>	
+        </main>
+    </div> 
+</Layout>

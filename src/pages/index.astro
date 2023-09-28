@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SidebarComponent from "astro-sidebar-menu/astro";
+import generateMenuData from '../utility';
+// Generate the menu data based on your project's file structure
+const menuData = generateMenuData('src/content');
+---
+<Layout title="Welcome to Astro." class="demo-layout">
+	<SidebarComponent  menuData={menuData} />
+	<!-- <SidebarComponent customLiClass="sidebar-menu-li" customUlClass="sidebar-menu-ul" menuData={menuData} /> -->
+</Layout>
+
+<style>
+
+</style>

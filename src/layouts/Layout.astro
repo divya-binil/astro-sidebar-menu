@@ -1,0 +1,65 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+</head>
+<body>
+    <header class="head-custom">
+        <h1>Astro Sidebar Demo</h1>
+    </header>
+	<div>
+		<slot />
+	</div>
+    <footer>
+        <p>&copy; 2023 Your Website</p>
+    </footer>
+</body>
+</html>
+
+
+<style>
+	/* Global Styles */
+	body {
+		margin: 0;
+		font-family: Arial, sans-serif;
+	}
+
+	/* Header Styles */
+	header {
+		background-color: #333;
+		color: #fff;
+		padding: 10px;
+		text-align: center;
+	}
+
+	/* Sidebar Styles */
+	aside {
+		width: 250px;
+		background-color: #333;
+		color: #fff;
+		padding: 20px;
+	}
+
+	/* Page Content Styles */
+	main {
+		flex-grow: 1;
+		padding: 20px;
+		min-height: 800px; /* Adjust the minimum height as needed */
+	}
+
+	/* Footer Styles */
+	footer {
+		background-color: #333;
+		color: #fff;
+		padding: 10px;
+		text-align: center;
+	}
+	.head-custom{
+		background-color: rgb(2, 18, 31);
+	}
+
+</style>
