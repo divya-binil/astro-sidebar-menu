@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-import SidebarComponent from 'sidebar-menu-astro/astro';
+import SidebarComponent from 'astro-navigations/astro';
 
 import generateMenuData from '../utility';
 // Generate the menu data based on your project's file structure
@@ -18,10 +18,17 @@ const menuData = generateMenuData('src/content');
 
 <style>
 	.theme-sidebar-content {
-        height: calc(100vh - 187px);
+        min-height: calc(100vh - 170px); 
         max-height: 100%;
         display: flex;
         align-items: stretch;
-        align-content: stretch;
+        overflow: auto;
+        color: #17181c;
+        font-size: 14px;
+        line-height: 18px;
+	}
+    main {
+		flex-grow: 1;
+		padding: 20px;
 	}
 </style>

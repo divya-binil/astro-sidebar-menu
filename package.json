@@ -11,6 +11,6 @@
   },
   "dependencies": {
     "astro": "^3.1.4",
-    "sidebar-menu-astro": "^1.0.0"
+    "astro-navigations": "^1.0.1"
   }
 }
