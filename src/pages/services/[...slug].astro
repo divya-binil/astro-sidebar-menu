@@ -16,6 +16,8 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
+
+
 <Layout title="Package" >
 	<div style="display: flex;">
         <aside>
