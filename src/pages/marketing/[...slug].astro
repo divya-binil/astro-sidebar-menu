@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from "astro:content";
-import SidebarComponent from "astro-sidebar-menu/astro";
+import SidebarComponent from 'sidebar-menu-astro/astro';
 import generateMenuData from '../../utility';
 const menuData = generateMenuData('src/content');
 export const marketingCollection = "marketing" as const; 
@@ -17,15 +17,20 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 <Layout title="Package" >
-	<div style="display: flex;">
-        <aside>
-        	<!-- <h2>Sidebar Menu</h2> -->
-			<SidebarComponent  menuData={menuData} />
-			<!-- <SidebarComponent customLiClass="sidebar-menu-li" customUlClass="sidebar-menu-ul" menuData={menuData} /> -->          
-        </aside>
+    <div class="theme-sidebar-content">
+        <SidebarComponent  menuData={menuData} />       
         <main>
-            <!-- <h1 class="text-2xl font-semibold">Page Title</h1> -->
-			<Content/>	
+            <Content/>	
         </main>
     </div> 
 </Layout>
+
+<style>
+	.theme-sidebar-content {
+        height: calc(100vh - 187px);
+        max-height: 100%;
+        display: flex;
+        align-items: stretch;
+        align-content: stretch;
+	}
+</style>

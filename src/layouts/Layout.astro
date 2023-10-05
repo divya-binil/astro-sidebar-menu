@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
+    <title>Astro Sidebar Menu Demo</title>
 </head>
 <body>
-    <header class="head-custom">
+    <header class="theme-sidebar-header">
         <h1>Astro Sidebar Demo</h1>
     </header>
 	<div>
@@ -36,19 +36,10 @@
 		text-align: center;
 	}
 
-	/* Sidebar Styles */
-	aside {
-		width: 250px;
-		background-color: #333;
-		color: #fff;
-		padding: 20px;
-	}
-
 	/* Page Content Styles */
 	main {
 		flex-grow: 1;
 		padding: 20px;
-		min-height: 800px; /* Adjust the minimum height as needed */
 	}
 
 	/* Footer Styles */
@@ -58,8 +49,11 @@
 		padding: 10px;
 		text-align: center;
 	}
-	.head-custom{
+	.theme-sidebar-header{
 		background-color: rgb(2, 18, 31);
+	}
+	.theme-sidebar-content {
+		background: #ddd;
 	}
 
 </style>
